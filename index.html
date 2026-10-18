@@ -1,164 +1,414 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Yunqi Li</title>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: "Lato", sans-serif;
-                line-height: 1.6;
-                margin: 0;
-                padding: 0;
-                background: #fdfdfd;
-                color: #3a4455;
-            }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic homepage of Your Name — research, publications, and teaching.">
+  <title>Yunqi Li | NUS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f7f6f2;
+      --ink: #191919;
+      --muted: #686863;
+      --line: #d8d6cf;
+      --accent: #315d52;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --sans: "Lato", sans-serif;
+    }
 
-            .text-regular {
-                font-weight: 300;
-                font-style: normal;
-            }
+    * { box-sizing: border-box; }
 
-            .text-bold {
-                font-weight: 700; 
-            }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
 
-            .text-italic {
-                font-style: italic;
-                font-weight: 300; 
-            }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 300 16px/1.65 var(--sans);
+      text-rendering: optimizeLegibility;
+    }
 
-            header {
-                text-align: left;
-                padding: 0.1rem 0.1rem;
-                background: #eee;
-            }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 160ms ease, opacity 160ms ease;
+    }
 
-            header h1 {
-                margin: 2rem;
-                font-size: 1.7rem;
-                font-weight: 500;
-            }
+    a:hover {
+      color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+    }
 
-            main {
-                max-width: 800px;
-                margin: 2rem auto;
-                padding: 0 1rem;
-            }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
 
-            section {
-                margin-bottom: 2.5rem;
-            }
+    strong { font-weight: 400; }
 
-            h2 {
-                border-bottom: 0.5px solid #3a4455;
-                padding-bottom: 0.3rem;
-                color: #3a4455;
-                font-weight: 300;
-                font-size: 1.1rem;
-            }
+    .shell {
+      width: min(100% - 4rem, 860px);
+      margin-inline: auto;
+    }
 
-            footer {
-                text-align: center;
-                font-size: 0.9rem;
-                padding: 1rem;
-                background: #eee;
-                margin-top: 3rem;
-            }
+    header {
+      border-bottom: 1px solid var(--line);
+    }
 
-            a {
-                color: #31528c;
-                text-decoration: none;
-            }
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
 
-            ul li + li {
-                margin-top: 12px;
-            }
-        </style>
-    </head>
+    .nav-links {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.45rem 1.35rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
 
-    <body>
-        <header>
-            <h1>
-                Yunqi Li
-            </h1>
-        </header>
+    .nav-links a { color: var(--ink); }
+    .nav-links a:hover { color: var(--accent); }
 
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    Hi! I'm Yunqi, a Ph.D. student in the <a href="https://www.comp.nus.edu.sg/cs/">Department of Computer Science</a>, at <a href="https://nus.edu.sg">National University of Singapore</a>. I am fortunate to be advised by Prof. <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a>. 
-                    Previously, I received my Bachelor's degree from <a href="https://en.ustc.edu.cn/index.htm">University of Science and Technology of China</a>. 
-                </p>
-                <p>
-                    I'm broadly interested in theoretical computer science, and my work mainly focuses on the foundations of cryptography and computational complexity. 
-                </p>
-            </section>
+    main { padding-bottom: 4rem; }
 
-            <section id="publications">
-                <h2>Publications</h2>
-                <ul>
-                    <li>
-                        Weak Zero-Knowledge and One-Way Functions <br>
-                        with <a href="https://rohit656.github.io/webbpage/">Rohit Chatterjee</a> and <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a>. <br>
-                        <i>
-                            In the 7th conference on Information-Theoretic Cryptography, ITC 2026
-                        </i> &nbsp
-                        [<a href="https://eccc.weizmann.ac.il/report/2026/028/", class="text-regular">ECCC</a>]
-                        [<a href="https://eprint.iacr.org/2026/299", class="text-regular">ePrint</a>]
-                    </li>
-                    <li>
-                        Decoding Balanced Linear Codes with Preprocessing <br>
-                        with <a href="https://andrejb.net">Andrej Bogdanov</a>, <a href="https://rohit656.github.io/webbpage/">Rohit Chatterjee</a> and <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a>. <br>
-                        <i>
-                            In the 17th conference on Innovations in Theoretical Computer Science, ITCS 2026
-                        </i> &nbsp 
-                        [<a href="https://eccc.weizmann.ac.il/report/2025/147/", class="text-regular">ECCC</a>]
-                        [<a href="https://eprint.iacr.org/2025/1932/", class="text-regular">ePrint</a>]
-                        [<a href="itcs2026-ncp.pdf", class="text-regular", target="_blank">Slides</a>]
-                    </li>
-                    <li>
-                        Hardness Amplification for Real-Valued Functions <br>
-                        with <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a>. <br>
-                        <i>
-                            In the 40th Computational Complexity Conference, CCC 2025
-                        </i>  &nbsp
-                        [<a href="https://eccc.weizmann.ac.il/report/2025/087/", class="text-regular">ECCC</a>]
-                    </li>
-                </ul>
-            </section>
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 720px);
+      row-gap: 0;
+      align-items: end;
+      padding: clamp(4.5rem, 11vw, 8rem) 0 clamp(3.5rem, 8vw, 6rem);
+    }
 
-            <section id="teaching">
-                <h2>Teaching</h2>
-                <ul>
-                    <li>
-                        Teaching Assistant, CS4230/CS5430 Foundations of Modern Cryptography <br>
-                        <span class="text-regular">Spring 2025</span> <br>
-                        <i>On the honour list of student tutors 2025</i>
-                    </li>
-                    <li>
-                        Mentor, CP2107 Undergraduate Research Program <br>
-                        <span class="text-regular">Summer 2024</span>
-                    </li>
-                </ul>
-            </section>
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-            <section id="service">
-                <h2>Academic Service</h2>
-                <p>External Reviewer: Crypto 2026, STOC 2026, Eurocrypt 2026, TCC 2025, Crypto 2025, TCC 2024</p>
-            </section>
-        
-            <section>
-                <h2>Contact</h2>
-                <p>
-                    Email: [<span class="text-regular">first name</span>] dot [<span class="text-regular">last name</span>] at u dot nus dot edu
-                </p>
-                <p>Office: COM3-02-18, Security Research Lab</p>
-            </section>
-        </main>
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font: 300 4rem/0.9 var(--display);
+      letter-spacing: -0.045em;
+    }
 
-        <footer>
-            Last updated: June 2026. 
-        </footer>
-    </body>
+    .intro-main { max-width: 720px; }
+
+    .intro-copy {
+      max-width: 640px;
+      margin: 2rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .about-details {
+      grid-column: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      margin: 2rem 0 0;
+      padding: 1.25rem 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .about-details div { min-width: 12rem; }
+
+    .about-details dt {
+      margin-bottom: 0.2rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .about-details dd { margin: 0; }
+
+    .portrait {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: end;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--line) 45%, transparent);
+      aspect-ratio: 4 / 5;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section:not(.intro) {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: clamp(1.5rem, 6vw, 4.5rem);
+      padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font: 300 clamp(1.6rem, 3vw, 2.15rem)/1.2 var(--sans);
+      letter-spacing: -0.035em;
+    }
+
+    .publication-list,
+    .teaching-list,
+    .service-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .publication,
+    .course,
+    .service {
+      display: grid;
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+      gap: 1.25rem;
+      padding: 1.35rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .publication:first-child,
+    .course:first-child,
+    .service:first-child { padding-top: 0; border-top: 0; }
+
+    .service--plain { display: block; }
+
+    .year {
+      color: var(--muted);
+      font-size: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .publication h3,
+    .course h3,
+    .service h3 {
+      margin: 0 0 0.25rem;
+      font: 400 1.05rem/1.4 var(--sans);
+    }
+
+    .publication p,
+    .course p,
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .paper + .paper {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .paper-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 0.55rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .publication .venue {
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    footer {
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 2.5rem, 860px); }
+      nav {
+        min-height: 62px;
+        justify-content: flex-end;
+        padding: 0;
+      }
+      .nav-links {
+        display: flex;
+        gap: 0.55rem;
+        font-size: 0.63rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .portrait {
+        grid-column: auto;
+        grid-row: auto;
+        width: min(48vw, 190px);
+        justify-self: center;
+      }
+      .about-details {
+        grid-column: auto;
+        margin-top: 0;
+      }
+      section:not(.intro) { grid-template-columns: 1fr; gap: 0.5rem; }
+      h2 { margin-bottom: 1.25rem; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #171816;
+        --ink: #efeee9;
+        --muted: #aaa9a2;
+        --line: #363833;
+        --accent: #8eb7a9;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="shell">
+    <section id="about" class="intro" aria-labelledby="intro-title">
+        <div class="intro-main">
+          <h1 id="intro-title">Yunqi Li</h1><br>
+          <p class="eyebrow">National University of Singapore</p>
+          <p class="intro-copy">
+              Hi! I'm Yunqi, a Ph.D. student in the <a href="https://www.comp.nus.edu.sg/cs/">Department of Computer Science</a>, at <a href="https://nus.edu.sg">National University of Singapore</a>. I am fortunate to be advised by Prof. <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a>. 
+              Previously, I received my Bachelor's degree from <a href="https://en.ustc.edu.cn/index.htm">University of Science and Technology of China</a>. 
+          </p>
+          <p class="intro-copy">
+              I'm broadly interested in theoretical computer science, and my work mainly focuses on the foundations of cryptography and computational complexity. 
+          </p>
+        </div>
+        <dl class="about-details">
+          <div>
+            <dt>Email</dt>
+            <dd>[First Name] dot [Last Name] @u.nus.edu</dd>
+          </div>
+          <div>
+            <dt>Office</dt>
+            <dd>COM3-02-18, Security Research Lab</dd>
+          </div>
+        </dl>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-title">
+        <h2 id="publications-title">Publications</h2>
+        <div>
+          <ol class="publication-list">
+            <li class="publication">
+              <span class="year">2026</span>
+              <div class="paper-list">
+                <article class="paper">
+                  <h3>Smooth Random Self-Reductions</h3>
+                  <p>with <a href="https://www.cs.ox.ac.uk/people/rahul.santhanam/">Rahul Santhanam</a> and <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a></p>
+                  <p class="venue">Manuscript</p>
+                </article>
+                <article class="paper">
+                  <h3>Weak Zero-Knowledge and One-Way Functions</h3>
+                  <p>with <a href="https://rohit656.github.io/webbpage/">Rohit Chatterjee</a> and <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a></p>
+                  <div class="paper-links"><a href="https://eccc.weizmann.ac.il/report/2026/028/">[ECCC]</a><a href="https://eprint.iacr.org/2026/299/">[ePrint]</a></div>
+                  <p class="venue">ITC 2026</p>
+                </article>
+                <article class="paper">
+                  <h3>Decoding Balanced Linear Codes with Preprocessing</h3>
+                  <p>with <a href="https://andrejb.net">Andrej Bogdanov</a>, <a href="https://rohit656.github.io/webbpage/">Rohit Chatterjee</a> and <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a></p>
+                  <div class="paper-links"><a href="https://eccc.weizmann.ac.il/report/2025/147/">[ECCC]</a><a href="https://eprint.iacr.org/2025/1932/">[ePrint]</a><a href="https://yunqiilee.github.io/itcs2026-ncp.pdf">[Slides]</a></div>
+                  <p class="venue">ITCS 2026</p>
+                </article>
+              </div>
+            </li>
+            <li class="publication">
+              <span class="year">2025</span>
+              <div class="paper-list">
+                <article class="paper">
+                  <h3>Hardness Amplification for Real-Valued Functions</h3>
+                  <p>with <a href="https://www.comp.nus.edu.sg/~prashant/index.html">Prashant Nalini Vasudevan</a></p>
+                  <div class="paper-links"><a href="https://eccc.weizmann.ac.il/report/2025/087/">[ECCC]</a></div>
+                  <p class="venue">CCC 2025</p>
+                </article>
+              </div>
+            </li>
+          </ol>
+        </div>
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-title">
+      <h2 id="teaching-title">Teaching</h2>
+      <div>
+        <ul class="teaching-list">
+          <li class="course">
+            <span class="year">2025 Spring</span>
+            <div>
+              <h3>CS4230/CS5430 Foundations of Modern Cryptography</h3>
+              <p>Teaching Assistant <br> On the honour list of student tutors 2025</p>
+            </div>
+          </li>
+          <li class="course">
+            <span class="year">2024 Summer</span>
+            <div>
+              <h3>CP2107 Undergraduate Research Program</h3>
+              <p>Mentor</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="service" aria-labelledby="service-title">
+      <h2 id="service-title">Academic Service</h2>
+      <div>
+        <ul class="service-list">
+          <li class="service service--plain">
+            <div>
+              <h3>External Reviewer</h3>
+              <p>SOSA 2027, Asiacrypt 2026, Crypto 2026, STOC 2026, Eurocrypt 2026, TCC 2025, Crypto 2025, TCC 2024</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="shell">© 2026 Yunqi Li · Last updated October 2026</div>
+  </footer>
+</body>
 </html>
